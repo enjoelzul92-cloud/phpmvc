@@ -1,0 +1,48 @@
+PERSIAPAN:
+1. Buat struktur tabel dulu seperti dibawah ini
+    app/
+        controllers
+        core/
+            App.php
+            Controller.php
+        models
+        views/
+            home
+        init.php
+    pubic/
+        css
+        img
+        js
+        index.php
+
+2. Isi file public/index.php dengan
+    require_once '../app/init.php';
+
+3. Isi file app/init.php dengan
+    require_once 'core/App.php';
+    require_once 'core/Controller.php';
+
+4. Buat class App pada app/core/App.php
+    class App
+     {
+        public function __construct()
+        {
+            echo "OKE!";
+        }
+     }
+
+5. Buat objek baru di untuk class App di public/index.php
+    $app = new App();
+
+ROUTING:
+1. Mengelola url agar lebih dengan cara teknik parsing
+
+2. Membuat method parseURL()
+    public function parseURL()
+    {
+        if(isset($_GET['url']))
+        {
+            $url = $_GET['url'];
+            return;
+        }
+    }
